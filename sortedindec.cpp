@@ -11,15 +11,10 @@ int main(){
     }
     bool f= true;
     for(int i=0;i<n-1;i++){
-        if(arr[i]>arr[i+1]|| arr[i]==arr[i+1]){
+        if(arr[i]>arr[i+1]){
             f=false;
             break;
         }
     }
-    if(f){
-        cout<<"True"<<endl;
-    }
-    else{
-        cout<<"False"<<endl;
-    }
+    cout<<f<<endl;
 }
