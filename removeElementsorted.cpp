@@ -1,3 +1,4 @@
+//Remove Duplicates from a Sorted Array
 #include<iostream>
 using namespace std;
 int main(){
@@ -10,7 +11,7 @@ int main(){
         cin>>arr[i];
     }
     int j=0;//first element is always unique
-    for(int i=0;i<n;i++){
+    for(int i=1;i<n;i++){
         if(arr[i]!=arr[j]){
             j++;
             arr[j]= arr[i];

@@ -1,3 +1,4 @@
+//Find the Second Smallest Element in an Array
 #include<iostream>
 using namespace std;
 int main(){
