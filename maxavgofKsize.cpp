@@ -13,41 +13,22 @@ int main(){
     for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
-
-    int k;
-    cout << "Enter k: " << endl;
-    cin >> k;
-
-    // guard condition
-    if(k > n){
-        cout << "Invalid k" << endl;
-        return 0;
+    int k,sum=0;
+    cout<<"enter k: "<<endl;
+    cin>>k;
+    for(int i=0;i<k;i++){
+        sum+=arr[i];
     }
-
-    int sum = 0;
-
-    // first window
-    for(int i = 0; i < k; i++){
-        sum += arr[i];
-    }
-
-    int maxsum = sum;   // IMPORTANT FIX
-
-    int j = 0;
-    int idx = k;        // use a separate index instead of modifying k
-
-    while(idx < n){
-        sum = sum - arr[j] + arr[idx];
+    int maxsum= sum;
+    int dup_k = k, j=0;
+    while(dup_k<n){
+        sum = sum - arr[j]+arr[dup_k];
         j++;
-        idx++;
-
-        if(sum > maxsum){
-            maxsum = sum;
+        dup_k++;
+        if(sum>maxsum){
+            maxsum= sum;
         }
     }
-
-    double avg = (double)maxsum / k;   // IMPORTANT FIX
-
-    cout << "maximum average is: " << avg << endl;
-    return 0;
+    double avg= (double)maxsum/k;
+    cout<<"maximum average is: "<<avg<<endl;
 }
